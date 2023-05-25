@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+  {{objects.title}} 
+
+<form>
+  {% csrf_token %}
+  <input type="text", name="search", placeholder="Search">
+  <button type="submit">search</button>
+</form>
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if not created %}
+  <form action=".", method="POST">
+    {% csrf_token %}
+
+      {{ form.as_p }}
+    
+    <button type="submit">Create</button>
+  </form>
+{% else %}
+  <h3 style="color:rgb(2, 66, 2)">Article Created Successfully!</h3>
+  <a href="/core/{{object.id}}/"> {{object.title}}-{{object.author}} </a>
+{% endif %}
+
+{% endblock content %}
