@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
-
+@login_required
 def home_view(request):
   rand = random.randint(1, 3)
   article_obj = Article.objects.get(id=rand)
